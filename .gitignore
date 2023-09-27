@@ -1,7 +1,5 @@
-/.idea/
-/src/
-/out/
-
+/*
+!/lab1
 /lab1/*
 !/lab1/Program1.java
 
