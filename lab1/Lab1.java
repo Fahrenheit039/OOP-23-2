@@ -6,7 +6,7 @@ public class Lab1 {
     public static void main(String[] args) {
         Lab1 obj = new Lab1();
 
-        int i = 3;
+        int i = 33;
         System.out.println( Arrays.toString( obj.arrayUnionAndSort_2(new int[]{7, 5, 3, 1},new int[]{8,6,4,2}) ) );
 //        System.out.println( obj.maxSumSubArray_3(new int[]{7, 5, -20, 8, 5}) );
 //        System.out.println( Arrays.deepToString( obj.turnToRight_4( new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}} ) ) );
