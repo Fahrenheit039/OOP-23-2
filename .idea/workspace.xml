@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="86e78987-a109-4cb4-a8da-e9afeddf40b1" name="Changes" comment="2">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +39,17 @@
     "jdk.selected.JAVA_MODULE": "openjdk-20",
     "last_opened_file_path": "G:/RE-install_from-7-to-11/asus/Users/fw/Desktop/bfu.pt2/3-1/oop/OOP-23-2",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\RE-install_from-7-to-11\asus\Users\fw\Desktop\bfu.pt2\3-1\oop\OOP-23-2\.idea" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695776202448</updated>
       <workItem from="1695776203826" duration="180000" />
-      <workItem from="1695776418977" duration="3614000" />
+      <workItem from="1695776418977" duration="3762000" />
     </task>
     <task id="LOCAL-00001" summary="test1">
       <created>1695777325657</created>
@@ -113,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695779660746</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2">
+      <created>1695780077786</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695780077786</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
