@@ -1,8 +1,6 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-public class Main {
+public class Main_2 {
 
     public static Vector[] checkInput(int level){
         Vector[] v = new Vector[level];
@@ -46,9 +44,9 @@ public class Main {
 
             System.out.println("\nСписок введенных векторов: ");
             op.printV();
-            System.out.println("\nuse hot-keys to call needed function. command list:");
+            System.out.println("\nhot-keys for function calling. command list:");
             op.printMenu();
-            System.out.print("command : ");
+            System.out.print("next command : ");
             in = new Scanner(System.in);
             inputLine = in.nextLine();
 
@@ -56,26 +54,25 @@ public class Main {
 //                # 1
                 case "q":
                     v = checkInput(2);
-                    op.sumVectors(v[0], v[1]);
+                    op.printCurrentV( op.sumVectors(v[0], v[1]) );
                     break;
                 case "w":
                     v = checkInput(2);
-                    op.subtractVectors(v[0], v[1]);
+                    op.printCurrentV( op.subtractVectors(v[0], v[1]) );
                     break;
                 case "e":
                     v = checkInput(1);
-                    op.unitVector(v[0]);
+                    op.printCurrentV( op.unitVector(v[0]) );
                     break;
                 case "r":
                     v = checkInput(1);
-                    op.reverseVector(v[0]);
+                    op.printCurrentV( op.reverseVector(v[0]) );
                     break;
                 case "t":
                     v = checkInput(2);
 //                    op.createVectorByCoords();
 //                            vectorsArray.add(new Vector(new Point(x1, y1, z1), new Point(x2, y2, z2)));
-
-                    op.vectorProductVectors(v[0], v[1]);
+                    op.printCurrentV( op.vectorProductVectors(v[0], v[1]) );
                     break;
 
 //                # 2

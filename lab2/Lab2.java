@@ -37,6 +37,7 @@ class Operations{
         vMethods = new LinkedHashMap<String, String>();
     }
 
+    //sumVectors
     public Vector sumVectors(Vector a, Vector b){
         Vector v = new Vector();
         v.i = a.i + b.i;
@@ -44,6 +45,23 @@ class Operations{
         v.k = a.k + b.k;
         return v;
     }
+    public void sumVectors(int a, int b){
+        // TODO: 19.02.2024 create func "checkGettingObject" if he doesn't exist 
+        Vector v = new Vector();
+        v.i = vectorsArray.get(a).i + vectorsArray.get(b).i;
+        v.j = vectorsArray.get(a).j + vectorsArray.get(b).j;
+        v.k = vectorsArray.get(a).k + vectorsArray.get(b).k;
+        createVectorByCoords(v);
+    } // new = a+b
+    public void sumVectors(int a, int b, int c){
+        Vector v = new Vector();
+        v.i = vectorsArray.get(a).i + vectorsArray.get(b).i;
+        v.j = vectorsArray.get(a).j + vectorsArray.get(b).j;
+        v.k = vectorsArray.get(a).k + vectorsArray.get(b).k;
+        vectorsArray.set(c, v);
+    } // c = a+b
+
+    //subtractVectors
     public Vector subtractVectors(Vector a, Vector b){
         Vector v = new Vector();
         v.i = a.i - b.i;
@@ -51,15 +69,48 @@ class Operations{
         v.k = a.k - b.k;
         return v;
     }
+    public void subtractVectors(int a, int b){
+        Vector v = new Vector();
+        v.i = vectorsArray.get(a).i - vectorsArray.get(b).i;
+        v.j = vectorsArray.get(a).j - vectorsArray.get(b).j;
+        v.k = vectorsArray.get(a).k - vectorsArray.get(b).k;
+        createVectorByCoords(v);
+    }
+    public void subtractVectors(int a, int b, int c){
+        Vector v = new Vector();
+        v.i = vectorsArray.get(a).i - vectorsArray.get(b).i;
+        v.j = vectorsArray.get(a).j - vectorsArray.get(b).j;
+        v.k = vectorsArray.get(a).k - vectorsArray.get(b).k;
+        vectorsArray.set(c, v);
+    }
+
+    //reverseVector
     public Vector reverseVector(Vector v){
         v.i = -1 * v.i;
         v.j = -1 * v.j;
         v.k = -1 * v.k;
         return v;
-    } // todo мб сделать void . java не создает новый объект, а меняет переданный
+    }
+    public void reverseVector(int a){
+        Vector v = new Vector();
+        v.i = -1 * vectorsArray.get(a).i;
+        v.j = -1 * vectorsArray.get(a).j;
+        v.k = -1 * vectorsArray.get(a).k;
+        createVectorByCoords(v);
+    }
+    public void reverseVector(int a, int b){
+        Vector v = new Vector();
+        v.i = -1 * vectorsArray.get(a).i;
+        v.j = -1 * vectorsArray.get(a).j;
+        v.k = -1 * vectorsArray.get(a).k;
+        vectorsArray.set(b, v);
+    }
+
     public double lengthVector(Vector v){
         return Math.sqrt(v.i*v.i + v.j*v.j + v.k*v.k);
     }
+
+    //unitVector
     public Vector unitVector(Vector v){
         double l = lengthVector(v);
         v.i = v.i / l;
@@ -67,6 +118,24 @@ class Operations{
         v.k = v.k / l;
         return v;
     } // todo void
+    public void unitVector(int a){
+        Vector v = new Vector();
+        double l = lengthVector(vectorsArray.get(a));
+        v.i = vectorsArray.get(a).i / l;
+        v.j = vectorsArray.get(a).j / l;
+        v.k = vectorsArray.get(a).k / l;
+        createVectorByCoords(v);
+    }
+    public void unitVector(int a, int b){
+        Vector v = new Vector();
+        double l = lengthVector(vectorsArray.get(a));
+        v.i = vectorsArray.get(a).i / l;
+        v.j = vectorsArray.get(a).j / l;
+        v.k = vectorsArray.get(a).k / l;
+        vectorsArray.set(b, v);
+    }
+
+
     public double dotProductVectors(Vector a, Vector b){
         return lengthVector(a) * lengthVector(b) * ( (a.i*b.i + a.j*b.j + a.k*b.k) / (lengthVector(a) * lengthVector(b)) );
     } // cos a = a-> * b-> / a*b  \\ a-> * b-> = ax*bx + ay*by + az*bz \\ a*b = length(a)*(length(b)
@@ -127,12 +196,16 @@ class Operations{
     public void createVectorBy2P(double x1, double y1, double z1, double x2, double y2, double z2){
         vectorsArray.add(new Vector(new Point(x1, y1, z1), new Point(x2, y2, z2)));
     }
+    public void createVectorByCoords(Vector v){
+        vectorsArray.add(v);
+    }
     public void createVectorByCoords(double i, double j, double k){
         vectorsArray.add(new Vector(i, j, k));
     }
 
 
     protected void initMenu () {
+        // return Vector
         vMethods.put("q", "sumVectors(Vector a, Vector b)");
         vMethods.put("w", "subtractVectors(Vector a, Vector b)");
         vMethods.put("e", "unitVector(Vector v)");
@@ -140,6 +213,7 @@ class Operations{
         vMethods.put("t", "vectorProductVectors(Vector a, Vector b)");
         vMethods.put(" ", " ");
 
+        // return Double
         vMethods.put("a", "lengthVector(Vector v)");
         vMethods.put("s", "dotProductVectors(Vector a, Vector b)");
         vMethods.put("d", "mixedProductVectors(Vector a, Vector b, Vector c)");
@@ -147,6 +221,7 @@ class Operations{
         vMethods.put("g", "angleBetweenVectors(Vector a, Vector b)");
         vMethods.put("  ", " ");
 
+        // return Boolean
         vMethods.put("j", "collinearityVectors(Vector a, Vector b)");
         vMethods.put("k", "coplanarityVectors(Vector a, Vector b, Vector c)");
         vMethods.put("   ", " ");
@@ -171,6 +246,9 @@ class Operations{
         for(Vector item : items){
             System.out.println(counter+++") ("+item.i +" ; "+ item.j +" ; "+ item.k+")");
         }
+    }
+    public void printCurrentV (Vector v){
+        System.out.println("v = ("+v.i +" ; "+ v.j +" ; "+ v.k+")");
     }
 
 
